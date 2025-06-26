@@ -4,7 +4,7 @@ const cartController = require("../controllers/cart.controller");
 const authMiddleware = require("../middlewares/auth.middleware");
 const { apiLimiter } = require("../middlewares/rateLimit.middleware");
 const { validate } = require("../middlewares/validation.middleware");
-const { cartSchema } = require("../validations/cart.validation");
+const { cartSchema, updateCartSchema } = require("../validations/cart.validation");
 
 // Protect all routes
 router.use(authMiddleware.protect);
@@ -19,7 +19,7 @@ router.post(
 router.put(
   "/:itemId",
   apiLimiter,
-  validate(cartSchema, "body"),
+  validate(updateCartSchema, "body"),
   cartController.updateCartItem
 );
 router.delete("/:itemId", apiLimiter, cartController.removeCartItem);

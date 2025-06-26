@@ -77,17 +77,24 @@ JWT_COOKIE_EXPIRE=30
 STRIPE_SECRET_KEY=your_stripe_secret_key
 STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
 EMAIL_HOST=your_smtp_host
-EMAIL_PORT=your_smtp_port
+EMAIL_PORT=587
 EMAIL_USER=your_email_user
 EMAIL_PASS=your_email_pass
 EMAIL_FROM=your_email_from
 CLOUDINARY_CLOUD_NAME=your_cloudinary_name
 CLOUDINARY_API_KEY=your_cloudinary_key
 CLOUDINARY_API_SECRET=your_cloudinary_secret
+FRONTEND_URL=http://localhost:3000
+MAX_FILE_UPLOAD=1000000
+LOG_LEVEL=info
 ```
 
 ### 4. Run Locally
 ```bash
+# Development mode
+npm run dev
+
+# Production mode
 npm start
 ```
 The server will start on `http://localhost:5000`.

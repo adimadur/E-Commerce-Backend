@@ -8,8 +8,8 @@ const { reviewSchema } = require("../validations/review.validation");
 
 // Public routes
 router.get("/", apiLimiter, reviewController.getReviews);
-router.get("/:id", apiLimiter, reviewController.getReview);
 router.get("/products/:productId", apiLimiter, reviewController.getReviews);
+router.get("/:id", apiLimiter, reviewController.getReview);
 
 // Protect all routes after this middleware
 router.use(authMiddleware.protect);

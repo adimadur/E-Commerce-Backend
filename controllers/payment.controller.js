@@ -2,6 +2,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const Order = require("../models/Order");
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middlewares/async");
+const paymentService = require("../services/payment.service");
 
 // @desc    Create stripe payment intent
 // @route   POST /api/v1/payment/create-payment-intent
