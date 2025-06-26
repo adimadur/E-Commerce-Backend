@@ -58,7 +58,7 @@ A full-featured E-Commerce backend built with Node.js, Express, and MongoDB. Thi
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/yourusername/e-commerce.git
-cd e-commerce
+cd E-Commerce-Backend
 ```
 
 ### 2. Install Dependencies
@@ -153,6 +153,3 @@ E-Commerce/
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ---
-
-## License
-[ISC](LICENSE) 
