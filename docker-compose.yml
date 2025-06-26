@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - '5000:5000'
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - MONGO_URI=mongodb://mongo:27017/ecommerce
+      - JWT_SECRET=your_jwt_secret
+      - JWT_EXPIRE=30d
+      - JWT_COOKIE_EXPIRE=30
+      - STRIPE_SECRET_KEY=your_stripe_secret_key
+      - STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:4.4
+    ports:
+      - '27017:27017'
+    volumes:
+      - ecommerce-data:/data/db
+    restart: unless-stopped
+
+volumes:
+  ecommerce-data:
